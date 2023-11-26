@@ -12,6 +12,10 @@ module tt_um_kris_full_adder #( parameter MAX_COUNT = 24'd10_000_000 ) (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+	assign uo_out[7:2] = 'h00;
+	assign uio_out = 8'h00;
+	assign uio_oe = 8'h00;
+
     openlane_full_adder fa (
 		.a(ui_in[0]), .b(ui_in[1]), .carry_in(ui_in[2]),
 		.c(uo_out[0]), .carry_out(uo_out[1])
